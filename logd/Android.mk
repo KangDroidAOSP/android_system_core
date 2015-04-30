@@ -37,7 +37,8 @@ LOCAL_SHARED_LIBRARIES := \
 # so make sure we do not regret hard-coding it as follows:
 event_flag := -DAUDITD_LOG_TAG=1003 -DLOGD_LOG_TAG=1004
 
-LOCAL_CFLAGS := -Werror $(event_flag)
+LOCAL_CFLAGS := $(event_flag)
+LOCAL_CFLAGS += -Os -std=gnu89
 
 include $(BUILD_EXECUTABLE)
 
